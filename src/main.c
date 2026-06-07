@@ -56,8 +56,8 @@ void clock_init() {
     // Wait until PLLRDY is cleared
     while((RCC->CR & RCC_CR_PLLRDY) != 0);
     // Change the desired parameters
-    // Set the PLL multiplier to 3 (48Mhz)
-    RCC->CFGR = (RCC->CFGR & (~RCC_CFGR_PLLMUL)) | (RCC_CFGR_PLLMUL3);
+    // Set the PLL multiplier to 6 (48Mhz)
+    RCC->CFGR = (RCC->CFGR & (~RCC_CFGR_PLLMUL)) | (RCC_CFGR_PLLMUL6); // Used 8MHz crystal instead of 16
     // Set the PLL divider (prediv) to 1
     RCC->CFGR2 = (RCC->CFGR2 & (~RCC_CFGR2_PREDIV)) | (RCC_CFGR2_PREDIV_DIV1);
     // Set PLL source to HSE
